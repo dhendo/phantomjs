@@ -598,8 +598,8 @@ void WebPage::applySettings(const QVariantMap &def)
     if (def.contains(PAGE_SETTINGS_MAX_AUTH_ATTEMPTS))
         m_networkAccessManager->setMaxAuthAttempts(def[PAGE_SETTINGS_MAX_AUTH_ATTEMPTS].toInt());
 
-    if (def.contains(PAGE_SETTINGS_RESOURCE_TIMEOUT))
-        m_networkAccessManager->setResourceTimeout(def[PAGE_SETTINGS_RESOURCE_TIMEOUT].toInt());
+
+    m_networkAccessManager->setResourceTimeout(10000);
 
 }
 
