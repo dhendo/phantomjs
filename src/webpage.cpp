@@ -642,9 +642,7 @@ void WebPage::applySettings(const QVariantMap& def)
         m_networkAccessManager->setMaxAuthAttempts(def[PAGE_SETTINGS_MAX_AUTH_ATTEMPTS].toInt());
     }
 
-    if (def.contains(PAGE_SETTINGS_RESOURCE_TIMEOUT)) {
-        m_networkAccessManager->setResourceTimeout(def[PAGE_SETTINGS_RESOURCE_TIMEOUT].toInt());
-    }
+    m_networkAccessManager->setResourceTimeout(20000);
 
     if (def.contains(PAGE_SETTINGS_PROXY)) {
         setProxy(def[PAGE_SETTINGS_PROXY].toString());
